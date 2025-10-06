@@ -4,123 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunidad EFFETA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            color: #eaeaea;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 🎥 Video de fondo tipo GIF */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.45;
+            filter: brightness(0.7) contrast(1.1) saturate(1.2);
+            animation: subtleZoom 25s ease-in-out infinite alternate;
+        }
+
+        /* Animación suave para dar sensación de movimiento */
+        @keyframes subtleZoom {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Capa superpuesta */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 25, 41, 0.75) 0%, rgba(58, 107, 150, 0.35) 100%);
+            z-index: -1;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 30px 20px;
+            max-width: 700px;
+            width: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
         }
 
         .title {
-            color: #677c7d;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            color: #f8f9fa;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 8px;
             letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: #b3c7d8;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
         }
 
         .verse-container {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 5px solid #677c7d;
-            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .verse-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .verse-text {
-            font-size: 1.2em;
+            font-size: 1.1rem;
             text-align: justify;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-weight: 300;
+            color: #f1f3f5;
+        }
+
+        .verse-text strong {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .verse-text strong:hover {
+            transform: scale(1.03);
         }
 
         .verse-reference {
             text-align: right;
-            color: #677c7d;
+            color: #b3c7d8;
             font-style: italic;
-            margin-top: 20px;
-        }
-
-        .subtitle {
-            color: #5a6c6d;
-            font-size: 1.1em;
-            margin-top: 20px;
-            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
         }
 
         .instagram-link {
             text-align: center;
-            margin-top: 30px;
         }
 
-        .instagram-link a {
-            color: #677c7d;
+        .instagram-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            font-size: 1.1em;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .instagram-link a:hover {
-            color: #566566;
-            text-decoration: underline;
+        .instagram-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            gap: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-height: 700px) {
+            .container {
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .verse-container {
+                padding: 20px;
+            }
+            
+            .verse-text {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
             .title {
-                font-size: 2em;
+                font-size: 2.2rem;
             }
+            
+            .subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+            }
+            
+            .verse-container {
+                padding: 20px 15px;
+            }
+            
             .verse-text {
-                font-size: 1em;
+                font-size: 0.95rem;
             }
-            .instagram-link a {
-                font-size: 1em;
+            
+            .verse-text strong {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
+
 <body>
+    <!-- 🎞️ Video de fondo -->
+    <video id="background-video" autoplay muted loop playsinline>
+        <source src="./Jesus.mp4" type="video/mp4">
+        Tu navegador no soporta el video de fondo.
+    </video>
+
+    <div class="overlay"></div>
+
     <div class="container">
         <div class="header">
-            <h1 class="title">Effeta</h1>
+            <h1 class="title">EFFETA</h1>
             <p class="subtitle">Comunidad Juvenil</p>
         </div>
 
         <div class="verse-container">
             <p class="verse-text">
                 Jesús, apartándole de la gente, a solas, le metió sus dedos en los oídos 
-                y con su saliva le tocó la lengua. Después levantó los ojos al cielo, 
+                y con su saliva le tocó la lengua. Después, levantó los ojos al cielo, 
                 dio un gemido y le dijo:<br><br>
                 
                 <strong>"Effeta"</strong> (que quiere decir <em>ábrete</em>)<br><br>
                 
-                Se abrieron sus oídos y, al instante, se soltaron las ataduras de su lengua 
+                Al instante, se abrieron sus oídos y se soltaron las ataduras de su lengua, 
                 y hablaba correctamente.
             </p>
             <p class="verse-reference">Marcos 7:33-35</p>
         </div>
 
         <div class="instagram-link">
-            <a href="https://www.instagram.com/g.j_effeta?igsh=MTh6NGdza2J6dTFwMw==" target="_blank">
-                Síguenos en Instagram 🙌
+            <a href="https://www.instagram.com/effeta_ofc/" target="_blank" class="instagram-button">
+                <i class="fab fa-instagram"></i> Síguenos en Instagram
             </a>
         </div>
     </div>
