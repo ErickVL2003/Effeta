@@ -1,51 +1,106 @@
 <!--
-EFFETA - Módulo Footer
-Información de contacto y enlaces legales
+EFFETA - Módulo Footer Simplificado
+Información de contacto y enlaces esenciales
 -->
 
-<footer>
+<footer class="main-footer">
     <div class="footer-container">
+        <!-- Columna principal - Logo y descripción -->
         <div class="footer-about">
             <div class="footer-logo">EFF<span>ETA</span></div>
             <p class="footer-description">Una comunidad juvenil católica que busca abrir oídos a la Palabra de Dios y liberar lenguas para proclamar su amor.</p>
+            
             <div class="social-links">
-                <a href="#" class="social-link">
+                <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="social-link">
+                <a href="#" class="social-link discord" aria-label="Discord">
                     <i class="fab fa-discord"></i>
                 </a>
-                <a href="https://www.instagram.com/effeta_ofc/" target="_blank" class="social-link">
+                <a href="https://www.instagram.com/effeta_ofc/" target="_blank" class="social-link instagram" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="social-link">
+                <a href="#" class="social-link facebook" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
         </div>
         
+        <!-- Enlaces rápidos -->
         <div class="footer-links-container">
-            <h3 class="footer-heading">Enlaces rápidos</h3>
+            <h3 class="footer-heading">Navegación</h3>
             <ul class="footer-links">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#about">Quiénes Somos</a></li>
-                <li><a href="#stories">Historias</a></li>
-                <li><a href="#events">Eventos</a></li>
-                <li><a href="#join">Únete</a></li>
+                <li>
+                    <a href="#hero">
+                        <i class="fas fa-chevron-right"></i>
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <i class="fas fa-chevron-right"></i>
+                        Quiénes Somos
+                    </a>
+                </li>
+                <li>
+                    <a href="#stories">
+                        <i class="fas fa-chevron-right"></i>
+                        Historias
+                    </a>
+                </li>
+                <li>
+                    <a href="#events">
+                        <i class="fas fa-chevron-right"></i>
+                        Eventos
+                    </a>
+                </li>
+                <li>
+                    <a href="#join">
+                        <i class="fas fa-chevron-right"></i>
+                        Únete
+                    </a>
+                </li>
             </ul>
         </div>
         
+        <!-- Contacto -->
         <div class="footer-contact">
             <h3 class="footer-heading">Contacto</h3>
             <ul class="footer-links">
-                <li><i class="fas fa-envelope"></i> info@effeta.com</li>
-                <li><i class="fas fa-phone"></i> +123 456 7890</li>
-                <li><i class="fas fa-map-marker-alt"></i> Ciudad, País</li>
+                <li>
+                    <a href="mailto:info@effeta.com">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@effeta.com</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+1234567890">
+                        <i class="fas fa-phone"></i>
+                        <span>+123 456 7890</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="location-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ciudad, País</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
     
-    <div class="copyright">
-        &copy; 2025 EFFETA Comunidad Juvenil. Todos los derechos reservados.
+    <!-- Footer inferior -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <div class="copyright">
+                <p>&copy; 2025 EFFETA Comunidad Juvenil. Todos los derechos reservados.</p>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+        </div>
     </div>
 </footer>
+<script src="../js/improvements/footer.js"></script>
