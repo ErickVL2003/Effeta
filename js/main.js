@@ -7,6 +7,10 @@
  * Inicializa todas las funcionalidades después de cargar los módulos
  * @function initAfterModulesLoaded
  */
+/**
+ * Inicializa todas las funcionalidades después de cargar los módulos
+ * @function initAfterModulesLoaded
+ */
 function initAfterModulesLoaded() {
     console.log('🔄 Inicializando funcionalidades después de cargar módulos...');
     
@@ -18,6 +22,12 @@ function initAfterModulesLoaded() {
     initNavigation();
     initFormHandler();
     initAnimations();
+    
+    // CORRECCIÓN ESPECÍFICA: Aplicar fixes para el espacio header-hero
+    setTimeout(() => {
+        fixHeaderHeroSpacing();
+        verifyAndFixLayout();
+    }, 200);
     
     // Mostrar notificación de bienvenida
     setTimeout(() => {

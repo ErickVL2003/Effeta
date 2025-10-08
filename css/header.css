@@ -16,7 +16,8 @@ header {
     transition: all 0.3s ease;
     transform: translateY(0);
     height: var(--header-height);
-    /* Usa la variable definida */
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 header.hidden {

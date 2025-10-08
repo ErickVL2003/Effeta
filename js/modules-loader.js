@@ -218,3 +218,64 @@ window.EFFETA = {
     reloadAll: reloadAllModules,
     modules: MODULES
 };
+/**
+ * Función específica para corregir el espacio entre header y hero
+ * @function fixHeaderHeroSpacing
+ */
+function fixHeaderHeroSpacing() {
+    const header = document.getElementById('mainHeader');
+    const hero = document.getElementById('hero');
+    const heroContainer = document.getElementById('hero-container');
+    
+    if (!header || !hero || !heroContainer) {
+        console.warn('❌ No se encontraron elementos para corregir el espacio');
+        return;
+    }
+    
+    // Reset agresivo de estilos
+    hero.style.margin = '0';
+    hero.style.padding = '0';
+    hero.style.position = 'relative';
+    hero.style.top = '0';
+    hero.style.transform = 'translateY(0)';
+    
+    heroContainer.style.margin = '0';
+    heroContainer.style.padding = '0';
+    heroContainer.style.position = 'relative';
+    heroContainer.style.top = '0';
+    
+    // Aplicar padding al body para compensar el header fijo
+    document.body.style.paddingTop = '0';
+    setTimeout(() => {
+        document.body.style.paddingTop = header.offsetHeight + 'px';
+    }, 100);
+    
+    console.log('🔧 Corrección de espacio header-hero aplicada');
+}
+
+/**
+ * Verifica y corrige el layout después de cargar todos los módulos
+ * @function verifyAndFixLayout
+ */
+function verifyAndFixLayout() {
+    console.log('🔍 Verificando layout...');
+    
+    const header = document.getElementById('mainHeader');
+    const hero = document.getElementById('hero');
+    
+    if (header && hero) {
+        const headerRect = header.getBoundingClientRect();
+        const heroRect = hero.getBoundingClientRect();
+        
+        console.log(`📊 Header: ${headerRect.top}px, Hero: ${heroRect.top}px`);
+        
+        // Si hay espacio excesivo, aplicar corrección
+        if (heroRect.top > headerRect.bottom + 10) {
+            console.warn('⚠️  Se detectó espacio excesivo, aplicando corrección...');
+            fixHeaderHeroSpacing();
+        }
+    }
+    
+    // Forzar un reflow para asegurar que los estilos se apliquen
+    document.body.clientHeight;
+}

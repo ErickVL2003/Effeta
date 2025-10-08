@@ -1,14 +1,22 @@
 /**
- * EFFETA - Estilos del Hero
- * Contiene estilos específicos para la sección Hero
+ * EFFETA - Estilos del Hero (Versión Definitiva)
+ * Soluciona el espacio entre header y hero
  */
 
 #hero {
     text-align: center;
-    padding-top: 80px; /* Reducido de 150px a 80px */
+    padding: 0 !important;
+    margin: 0 !important;
     position: relative;
-    min-height: calc(100vh - 80px); /* Asegura altura mínima menos el header */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    /* Elimina cualquier transform que pueda causar espacio */
+    transform: none !important;
 }
+
 .hero-title {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
@@ -93,8 +101,21 @@
     animation: fadeInUp 1s ease 1.1s forwards;
 }
 
+/* Reset absoluto para el contenedor interno del hero */
+#hero .section-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    transform: none !important;
+}
+
 /* Responsive Design del Hero */
 @media (max-width: 768px) {
+    #hero {
+        min-height: 100vh;
+        padding: 0 !important;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
     }
@@ -106,6 +127,7 @@
 
     .verse-container {
         padding: 20px;
+        margin: 0 auto 30px;
     }
 
     .verse-text {
@@ -135,5 +157,9 @@
 
     .hero-subtitle {
         font-size: 0.9rem;
+    }
+    
+    #hero {
+        min-height: 100vh;
     }
 }
