@@ -1,0 +1,83 @@
+/**
+ * EFFETA - Estilos de Historias
+ * Contiene estilos específicos para la sección Stories
+ */
+
+.stories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.story-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#stories.visible .story-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#stories.visible .story-card:nth-child(1) { transition: all 0.6s ease 0.2s; }
+#stories.visible .story-card:nth-child(2) { transition: all 0.6s ease 0.4s; }
+#stories.visible .story-card:nth-child(3) { transition: all 0.6s ease 0.6s; }
+
+.story-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.story-content {
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.story-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.story-card:hover .author-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+}
+
+.author-info h4 {
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design de Stories */
+@media (max-width: 768px) {
+    .stories-container {
+        grid-template-columns: 1fr;
+    }
+}
