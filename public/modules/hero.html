@@ -1,33 +1,53 @@
 <!--
-EFFETA - Módulo Hero
-Sección principal con versículo bíblico y CTA
+EFFETA - Módulo Hero Mejorado
+Sección principal con versículo bíblico y CTA optimizado
 NOTA: Este archivo se carga dentro de una sección con clase .landing-section
 -->
 
-<div class="section-container">
-    <h1 class="hero-title">EFFETA</h1>
-    <p class="hero-subtitle">Comunidad Juvenil</p>
-    
-    <div class="verse-container">
-        <p class="verse-text">
-            Jesús, apartándole de la gente, a solas, le metió sus dedos en los oídos 
-            y con su saliva le tocó la lengua. Después, levantó los ojos al cielo, 
-            dio un gemido y le dijo:<br><br>
-            
-            <strong>"Effeta"</strong> (que quiere decir <em>ábrete</em>)<br><br>
-            
-            Al instante, se abrieron sus oídos y se soltaron las ataduras de su lengua, 
-            y hablaba correctamente.
-        </p>
-        <p class="verse-reference">Marcos 7:33-35</p>
-    </div>
+<div class="hero-background">
+    <!-- Elementos decorativos de fondo -->
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-gradient"></div>
+</div>
 
-    <div class="cta-buttons">
-        <a href="#join" class="btn btn-primary">
-            <i class="fas fa-users"></i> Únete a la Comunidad
-        </a>
-        <a href="#events" class="btn">
-            <i class="fas fa-calendar-alt"></i> Próximos Eventos
-        </a>
+<div class="section-container">
+    <div class="hero-content">
+        <h1 class="hero-title">EFFETA</h1>
+        <p class="hero-subtitle">Comunidad Juvenil Católica</p>
+        
+        <div class="value-proposition">
+            <p class="value-text">Encuentra tu propósito. Vive tu fe. <span class="highlight-text">Ábrete</span> a la gracia.</p>
+        </div>
+
+        <div class="verse-container">
+            <div class="verse-icon">✝</div>
+            <p class="verse-text">
+                Jesús, apartándole de la gente, a solas, le metió sus dedos en los oídos 
+                y con su saliva le tocó la lengua. Después, levantó los ojos al cielo, 
+                dio un gemido y le dijo:<br><br>
+                
+                <strong class="effeta-word">"Effeta"</strong> <span class="translation">(que quiere decir <em>ábrete</em>)</span><br><br>
+                
+                Al instante, se abrieron sus oídos y se soltaron las ataduras de su lengua, 
+                y hablaba correctamente.
+            </p>
+            <p class="verse-reference">Marcos 7:33-35</p>
+        </div>
+
+        <div class="cta-container">
+            <p class="cta-motivation">Únete y forma parte</p>
+            <div class="cta-buttons">
+                <a href="#join" class="btn btn-primary pulse-animation">
+                    <i class="fas fa-users"></i> Únete a la Comunidad
+                </a>
+                <a href="#events" class="btn btn-secondary">
+                    <i class="fas fa-calendar-alt"></i> Próximos Eventos
+                </a>
+            </div>
+            <p class="cta-note">Encuentros para conocer a Dios</p>
+        </div>
     </div>
 </div>
+<body></body>
+<script src="../js/improvements/hero.js"></script>
+</body>
